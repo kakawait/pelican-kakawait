@@ -1,15 +1,22 @@
-{% if site.twitter_user and site.twitter_tweet_count > 0 %}
+{#
+TODO:
+- https://dev.twitter.com/docs/faq#17750
+- https://twitter.com/settings/widgets/
+
+{% if TWITTER_USER and TWITTER_TWEET_COUNT and TWITTER_SHOW_REPLIES %}
 <div id="banner" class="inner">
 	<div class="container">
 		<ul class="feed"></ul>
 	</div>
-	<small><a href="http://twitter.com/{{ site.twitter_user }}">{{ site.twitter_user }}</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<small><a href="http://twitter.com/{{ TWITTER_USER }}">{{ TWITTER_USER }}</a> @ <a href="http://twitter.com">Twitter</a></small>
 	<div class="loading">Loading...</div>
 </div>
-<script src="{{ root_url }}/javascripts/twitter.js"></script>
+<script src="{{ root_url }}/theme/js/twitter.js"></script>
 <script type="text/javascript">
 	(function($){
-		$('#banner').getTwitterFeed('{{ site.twitter_user }}', {{ site.twitter_tweet_count }}, {{ site.twitter_show_replies }});
+		$('#banner').getTwitterFeed('{{ TWITTER_USER }}', {{ TWITTER_TWEET_COUNT }}, {{ TWITTER_SHOW_REPLIES }});
 	})(jQuery);
 </script>
 {% endif %}
+
+#}

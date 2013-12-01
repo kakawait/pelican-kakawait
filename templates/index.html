@@ -1,20 +1,43 @@
----
-layout: default
----
+{% extends "base.html" %}
+{% block content %}
+    {% if articles %}
+        {% for article in (articles_page.object_list if articles_page else articles) %}
+            <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+                {% include 'includes/article_meta.html' %}
+                <h1 class="title" itemprop="name"><a href="{{ SITEURL }}/{{ article.url }}" itemprop="url">{{ article.title }}</a></h1>
+                <div class="entry-content" itemprop="description">{{ article.summary }}
+                    {# Uncomment if you want to show comment counts #}
+                    {#{% include 'includes/comment_count.html' %}#}
+                    <a href="{{ SITEURL }}/{{ article.url }}">more ...</a>
+                </div>
+                <div class="meta">
+                    <span class="author">Posted by <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></span>
+                </div>
+            </article>
+            <hr/>
+        {% endfor %}
+    {% endif %}
 
-{% assign index = true %}
-<div itemscope itemtype="http://schema.org/Blog">
-{% for post in paginator.posts %}
-{% assign content = post.content %}
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">{% include article.html %}</article>
-{% endfor %}
-</div>
-<nav id="pagenavi">
-    {% if paginator.previous_page %}
-        <a href="{{paginator.previous_page}}" class="prev">Prev</a>
+    {% if articles_page and articles_paginator.num_pages > 1 %}
+        <nav id="pagenavi">
+            {% if articles_page.has_previous() %}
+                {% set num = articles_page.previous_page_number() %}
+                <a href="{{ SITEURL }}/{{ page_name }}{{ num if num > 1 else '' }}.html" class="prev">Prev</a>
+            {% endif %}
+
+            {#
+            TODO : Fix block-inline
+            {% for num in range( 1, 1 + articles_paginator.num_pages ) %}
+                <a href="{{ SITEURL }}/{{ page_name }}{{ num if num > 1 else '' }}.html" class="center">{{ num }}</a>
+            {% endfor %}
+            #}
+
+            <a href="{{ SITEURL }}{{ ARCHIVES_URL }}" class="center">Archive</a>
+
+            {% if articles_page.has_next() %}
+                <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html" class="next">Next</a>
+            {% endif %}
+        </nav>
     {% endif %}
-    {% if paginator.next_page %}
-        <a href="{{paginator.next_page}}" class="next">Next</a>
-    {% endif %}
-    <div class="center"><a href="{{ root_url }}/blog/archives">Blog Archives</a></div>
-</nav>
+{% endblock content %}
+

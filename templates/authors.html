@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+	{% block content %}
+		<section id="authors">
+			<h1 class="authors">Authors for {{ SITENAME }}</h1>
+			{% for author, articles in authors|sort %}
+				<section class="author">
+					<h1 class="author">{{ author }}</h1>
+
+					{% for article in articles|sort(true, attribute='date') %}
+						<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+					            <div class="meta">
+					                <div class="date">
+					                    <time datetime="{{ article.date.strftime('%Y-%m-%dT%H:%M:%S.%f%z') }}" itemprop="datePublished">{{ article.locale_date }}</time>
+					                </div>
+					                <div class="tags">
+					                    {% for tag in article.tags|sort %}
+					                        <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> {% if not loop.last %}, {% endif%}
+					                    {% endfor %}
+				                    </div>
+					            </div>
+							<h1 class="title" itemprop="name"><a href='{{ article.url }}'>{{ article.title }}</a></h1>
+						</article>
+					{% endfor %}
+
+				<section>
+			{% endfor %}
+		</section>
+	{% endblock %}
+

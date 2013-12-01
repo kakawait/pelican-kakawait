@@ -1,19 +1,27 @@
----
-layout: default
----
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block content %}
+<section id="content" class="body">
+    <article class="page" >
+        <h1 class="title"><a href="{{ SITEURL }}/{{ page.url }}" >{{ page.title }}</a></h1>
+        <div class="entry-content" >{{ page.content }}</div>
+    </article>
 
-<article class="page">
-    {% if page.title %}
-    <h1 class="title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+    {% if DISQUS_SITENAME %}
+    <section id="comment">
+        <h1 class="title">Comments</h1>
+        <div id="disqus_thread" aria-live="polite">
+            <script type="text/javascript">
+               var disqus_identifier = "{{ page.url }}";
+               (function() {
+               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+               dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+            </script>
+        </div>
+    </section>
     {% endif %}
-    <div class="entry-content">{{ content }}</div>
-</article>
-{% unless page.sharing == false %}
-	{% include post/sharing.html %}
-{% endunless %}
-{% if site.disqus_short_name and page.comments == true %}
-<section id="comment">
-    <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
+
 </section>
-{% endif %}
+{% endblock %}
