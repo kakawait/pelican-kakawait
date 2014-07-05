@@ -1,29 +1,29 @@
 {% extends "base.html" %}
-	{% block content %}
-		<section id="archives" itemscope="" itemtype="http://schema.org/Blog">
-			<h1 class="archives">Archives for {{ SITENAME }}</h1>
-			{% for article in dates|sort(true, attribute='date') %}
-				{% if loop.first %}
-					{% set year = article.date.strftime('%Y') %}
-					<section class="archive">
-						<h1 class="year">{{ year }}</h1>
-				{% else %}
-					{% if article.date.strftime('%Y') != year %}
-						{% set year = article.date.strftime('%Y') %}
-						</section>
-						<section class="archive">
-						<h1 class="year">{{ year }}</h1>
-					{% endif %}
-				{% endif %}
+    {% block content %}
+        <section id="archives" itemscope="" itemtype="http://schema.org/Blog">
+            <h1 class="archives">Archives for {{ SITENAME }}</h1>
+            {% for article in dates|sort(true, attribute='date') %}
+                {% if loop.first %}
+                    {% set year = article.date.strftime('%Y') %}
+                    <section class="archive">
+                        <h1 class="year">{{ year }}</h1>
+                {% else %}
+                    {% if article.date.strftime('%Y') != year %}
+                        {% set year = article.date.strftime('%Y') %}
+                        </section>
+                        <section class="archive">
+                        <h1 class="year">{{ year }}</h1>
+                    {% endif %}
+                {% endif %}
 
-				<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-			    	{% include 'includes/article_meta.html' %}
-					<h1 class="title" itemprop="name"><a href='{{ article.url }}'>{{ article.title }}</a></h1>
-				</article>
+                <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+                    {% include 'includes/article_meta.html' %}
+                    <h1 class="title" itemprop="name"><a href='{{ article.url }}'>{{ article.title }}</a></h1>
+                </article>
 
-			{% endfor %}
+            {% endfor %}
 
-			</section>
-		</section>
+            </section>
+        </section>
 
-	{% endblock %}
+    {% endblock %}

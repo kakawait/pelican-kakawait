@@ -1,26 +1,25 @@
 {% include 'includes/head.html' %}
 
-	<body>
-		<div class="container">
-			<div class="left-col">
-				<div class="intrude-less">
-				<header id="header" class="inner">
-					{% include 'includes/header.html' %}
-				</header>
-				</div>
-			</div>
-			<div class="mid-col">
-				{% include 'includes/banner.html' %}
-				<div class="mid-col-container">
-					<div id="content" class="inner">
-						{% block content %}{% endblock %}
-					</div>
-				</div>
-				<footer id="footer" class="inner">
-					{% include 'includes/footer.html' %}
-				</footer>
-				{% include 'includes/after_footer.html' %}
-			</div>
-		</div>
-	</body>
+    <body>
+        <div class="container">
+            <div class="left-col">
+                <div class="intrude-less">
+                    <header id="header" class="inner">{% include 'includes/header.html' %}
+                    </header>
+                </div>
+            </div>
+            <div class="mid-col">
+                {% include 'includes/banner.html' %}
+                <div class="mid-col-container">
+                    <div id="content" class="inner">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+                <footer id="footer" class="inner">
+                    {% include 'includes/footer.html' %}
+                </footer>
+                {% include 'includes/after_footer.html' %}
+            </div>
+        </div>
+    </body>
 </html>

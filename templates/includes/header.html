@@ -1,55 +1,55 @@
-{% if EMAIL_MD5 %}
-	<div class="profilepic">
-		<img src="http://www.gravatar.com/avatar/{{ EMAIL_MD5 }}?s={{ GRAVATAR_SIZE|default('160') }}" alt="Profile Picture" style="width: {{ GRAVATAR_SIZE|default('160') }}px;" />
-	</div>
-{% endif %}
+                            {% if EMAIL_MD5 %}
+                            <div class="profilepic">
+                                <img src="http://www.gravatar.com/avatar/{{ EMAIL_MD5 }}?s={{ GRAVATAR_SIZE|default('160') }}" alt="Profile Picture" style="width: {{ GRAVATAR_SIZE|default('160') }}px;" />
+                            </div>
+                        {% endif %}
 
-{% include 'custom/header.html' %}
+                        {% include 'custom/header.html' %}
 
-<nav id="main-nav">
-	{% include 'includes/navigation.html' %}
-</nav>
+                        <nav id="main-nav">{% include 'includes/navigation.html' %}
+                        </nav>
 
-<nav id="sub-nav">
-	<div class="social">
-		{% if EMAIL %}
-			<a class="email" href="mailto:{{ EMAIL }}" title="Email">Email</a>
-		{% endif %}
-		{% if FACEBOOK_USER %}
-			<a class="facebook" href="http://www.facebook.com/{{ FACEBOOK_USER }}" title="Facebook">Facebook</a>
-		{% endif %}
-		{% if GOOGLEPLUS_USER and GOOGLEPLUS_HIDDEN == false %}
-			<a class="google" href="https://plus.google.com/{{ GOOGLEPLUS_USER }}" rel="author" title="Google+">Google+</a>
-		{% endif %}
-		{% if TWITTER_USER %}
-			<a class="twitter" href="http://twitter.com/{{ TWITTER_USER }}" title="Twitter">Twitter</a>
-		{% endif %}
-		{% if GITHUB_USER %}
-			<a class="github" href="https://github.com/{{ GITHUB_USER }}" title="GitHub">GitHub</a>
-		{% endif %}
-		{% if CODERWALL_USER %}
-			<a class="coderwall" href="https://coderwall.com/{{ CODERWALL_USER }}" title="Coderwall">Coderwall</a>
-		{% endif %}
-		{% if STACKOVERFLOW_USER and STACKOVERFLOW_USER_ID %}
-		  <a class="stackoverflow" href="http://stackoverflow.com/users/{{STACKOVERFLOW_USER_ID}}/{{STACKOVERFLOW_USER}}" title="StackOverflow"></a>
-		{% endif %}
-		{% if LINKEDIN_USER %}
-			<a class="linkedin" href="http://www.linkedin.com/in/{{ LINKEDIN_USER }}" title="LinkedIn">LinkedIn</a>
-		{% endif %}
-		{% if PINTEREST_USER %}
-			<a class="pinterest" href="https://pinterest.com/{{ PINTEREST_USER }}" title="Pinterest">Pinterest</a>
-		{% endif %}
-		{% if DELICIOUS_USER %}
-			<a class="delicious" href="http://delicious.com/{{ DELICIOUS_USER }}" title="Delicious">Delicious</a>
-		{% endif %}
-		{% if PINBOARD_USER %}
-			<a class="pinboard" href="https://pinboard.in/u:{{ PINBOARD_USER }}" title="Pinboard">Pinboard</a>
-		{% endif %}
-		{% if DOUBAN_USER %}
-		<a class="douban" href="https://www.douban.com/people/{{ DOUBAN_USER }}" title="Douban">Douban</a>
-		{% endif %}
-		{% if SUBSCRIBE_FEED %}
-			<a class="rss" href="{{ SITEURL }}/{{ FEED }}" title="RSS">ATOM</a>
-		{% endif %}
-	</div>
-</nav>
+                        <nav id="sub-nav">
+                            <div class="social">
+                                {% if EMAIL %}
+                                    <a class="email" href="mailto:{{ EMAIL }}" title="Email">Email</a>
+                                {% endif %}
+                                {% if FACEBOOK_USER %}
+                                    <a class="facebook" href="http://www.facebook.com/{{ FACEBOOK_USER }}" title="Facebook">Facebook</a>
+                                {% endif %}
+                                {% if GOOGLEPLUS_USER and GOOGLEPLUS_HIDDEN == false %}
+                                    <a class="google" href="https://plus.google.com/{{ GOOGLEPLUS_USER }}" rel="author" title="Google+">Google+</a>
+                                {% endif %}
+                                {% if TWITTER_USER %}
+                                    <a class="twitter" href="http://twitter.com/{{ TWITTER_USER }}" title="Twitter">Twitter</a>
+                                {% endif %}
+                                {% if GITHUB_USER %}
+                                    <a class="github" href="https://github.com/{{ GITHUB_USER }}" title="GitHub">GitHub</a>
+                                {% endif %}
+                                {% if CODERWALL_USER %}
+                                    <a class="coderwall" href="https://coderwall.com/{{ CODERWALL_USER }}" title="Coderwall">Coderwall</a>
+                                {% endif %}
+                                {% if STACKOVERFLOW_USER and STACKOVERFLOW_USER_ID %}
+                                  <a class="stackoverflow" href="http://stackoverflow.com/users/{{STACKOVERFLOW_USER_ID}}/{{STACKOVERFLOW_USER}}" title="StackOverflow"></a>
+                                {% endif %}
+                                {% if LINKEDIN_USER %}
+                                    <a class="linkedin" href="http://www.linkedin.com/in/{{ LINKEDIN_USER }}" title="LinkedIn">LinkedIn</a>
+                                {% endif %}
+                                {% if PINTEREST_USER %}
+                                    <a class="pinterest" href="https://pinterest.com/{{ PINTEREST_USER }}" title="Pinterest">Pinterest</a>
+                                {% endif %}
+                                {% if DELICIOUS_USER %}
+                                    <a class="delicious" href="http://delicious.com/{{ DELICIOUS_USER }}" title="Delicious">Delicious</a>
+                                {% endif %}
+                                {% if PINBOARD_USER %}
+                                    <a class="pinboard" href="https://pinboard.in/u:{{ PINBOARD_USER }}" title="Pinboard">Pinboard</a>
+                                {% endif %}
+                                {% if DOUBAN_USER %}
+                                <a class="douban" href="https://www.douban.com/people/{{ DOUBAN_USER }}" title="Douban">Douban</a>
+                                {% endif %}
+                                {% if SUBSCRIBE_FEED %}
+                                    <a class="rss" href="{{ SITEURL }}/{{ FEED }}" title="RSS">ATOM</a>
+                                {% endif %}
+                            </div>
+                        </nav>
+
