@@ -1,6 +1,10 @@
 <!DOCTYPE HTML>
 <html>
+    {% if DEFAULT_LANG %}
+    <head lang="{{ DEFAULT_LANG }}">
+    {% else %}
     <head>
+    {% endif %}
         <meta charset="utf-8">
         <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
         <meta name="author" content="{{ AUTHOR }}">
@@ -57,7 +61,7 @@
         <link href="{{ SITEURL }}/theme/css/pygments.css" media="screen, projection" rel="stylesheet" type="text/css">
 
         <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-        <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel='stylesheet' type='text/css'>
+        <link href="//fonts.googleapis.com/css?family=Nunito:400,300,700" rel='stylesheet' type='text/css'>
         <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel='stylesheet' type='text/css'>
         <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel='stylesheet' type='text/css'>
 

@@ -6,8 +6,11 @@ html {
 
 body {
 	background: #3D4349;
-	font-family: "Open Sans", "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: $font;
+	background: $color-sidebar;
 	height: 100%;
+	color: #333;
+	font-size: 11px;
 }
 
 ::selection, ::-moz-selection, ::-webkit-selection {
@@ -98,8 +101,8 @@ body {
 					padding: 80px 0px;
 					.title {
 						margin-left: 0px;
-						font-style: italic;
 						font-size: 3em;
+						font-weight: 500;
 					}
 					&.single-post .title{
 						text-align: center;
@@ -110,7 +113,7 @@ body {
 						line-height: 1.4em;
 						font-size: 1.5em;
 						p {
-							margin-top: 30px;
+							margin-top: 10px;
 						}
 						.github-widget p {
 							margin-top: 0px;
@@ -133,7 +136,6 @@ body {
 							font-size: 1.3em;
 							color: #333;
 							margin-top: 30px;
-							margin-bottom: -20px;
 							font-weight: bold;
 						}
 						h2::before {
@@ -143,7 +145,7 @@ body {
 							border-left: 5px solid $greyshade;
 							background: #F7F7F7;
 							p {
-								margin-top: 0px; 
+								margin-top: 0px;
 							}
 						}
 						table {
@@ -216,21 +218,29 @@ body {
 	.left-col {
 		width: 23%;
 		position: fixed;
-		opacity: .3;
+		color: $color-gray05;
+		height: 100%;
+		font-size: 1.3em;
+		opacity: $opacity-sidebar;
 		-webkit-transition: all .2s ease-in;
 		-moz-transition: all .2s ease-in;
 		-o-transition: all .2s ease-in;
 		-ms-transition: all .2s ease-in;
 		transition: all .2s ease-in;
-		height: 100%;
+		
 		.intrude-less {
 			width: 80%;
 		}
+		
 		#header {
 			width: 100%;
 			padding: 20% 0% 0% 15%;
 			#main-nav {
 				margin-top: 10px;
+
+				p {
+					line-height: 1.4em;
+				}
 			}
 			.profilepic {
 				img {
@@ -253,6 +263,9 @@ body {
 				}
 				.social {
 					margin-bottom: 10px;
+					a {
+						margin-right: 5px;
+					}
 				}
 			}
 		}
@@ -288,7 +301,7 @@ body {
 			margin: 0 0;
 	}
 }
-@media screen and (max-width: 700px){
+@media screen and (max-width: 830px){
 	.container {
 		.credit-box {
 			display: none;

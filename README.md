@@ -4,6 +4,7 @@ Greyshade is a minimal, responsive theme for Pelican.
 
 Starting point forked from [Slash](https://github.com/tommy351/Octopress-Theme-Slash) then forked from (GreyShade)[https://github.com/shashankmehta/greyshade/]. I also picked some code from [Pelican-cait](https://github.com/hdra/pelican-cait).
 
+For demo, check out websites from the [wiki](https://github.com/shashankmehta/greyshade/wiki/Sites-using-Greyshade/)
 
 ## Features
 
