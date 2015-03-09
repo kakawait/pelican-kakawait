@@ -11,7 +11,7 @@ body {
 	}
 
 	h2 {
-		color: #666;
+		color: $color-gray02;
 		font-weight: normal;
 		line-height: 1.3em;
 		font-size: 1.3em;
@@ -20,14 +20,14 @@ body {
 
 .container {
 	.mid-col {
-		background: none;
 		width: 80%;
+		background: $color-background;
 	}
 	.left-col {
 		opacity: initial;
 		#header {
 			a {
-				color: #111;
+				color: $color-gray06;
 				text-shadow: initial
 			}
 		}

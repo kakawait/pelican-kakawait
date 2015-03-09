@@ -1642,7 +1642,7 @@ html {
 body {
   background: #3D4349;
   font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: whitesmoke;
+  background: #3D4349;
   height: 100%;
   color: #333;
   font-size: 11px;
@@ -1651,7 +1651,7 @@ body {
 /* line 16, ../../sass/_greyshade.scss */
 ::selection, ::-moz-selection, ::-webkit-selection {
   background-color: #CE5252;
-  color: whitesmoke;
+  color: #eee;
 }
 
 /* line 21, ../../sass/_greyshade.scss */
@@ -2023,7 +2023,7 @@ body {
 }
 /* line 13, ../../sass/custom/_kakawait.scss */
 #header h2 {
-  color: #666;
+  color: #999;
   font-weight: normal;
   line-height: 1.3em;
   font-size: 1.3em;
@@ -2031,8 +2031,8 @@ body {
 
 /* line 22, ../../sass/custom/_kakawait.scss */
 .container .mid-col {
-  background: none;
   width: 80%;
+  background: #eee;
 }
 /* line 26, ../../sass/custom/_kakawait.scss */
 .container .left-col {
@@ -2040,7 +2040,7 @@ body {
 }
 /* line 29, ../../sass/custom/_kakawait.scss */
 .container .left-col #header a {
-  color: #111;
+  color: #EFEFEF;
   text-shadow: initial;
 }
 
@@ -2112,7 +2112,7 @@ body {
 /* line 98, ../../sass/custom/_kakawait.scss */
 .container .mid-col .mid-col-container #content article .entry-content table th {
   background: #525252;
-  color: whitesmoke;
+  color: #eee;
   padding: 10px;
 }
 /* line 103, ../../sass/custom/_kakawait.scss */
